@@ -1,0 +1,72 @@
+---
+title: "Pair programming demo solutions"
+author: "Karim Rivera-Lares"
+date: "2025-08-28"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## **What is pair programming?**
+
+Pair programming refers to a common practice in software development where two programmers work on the same coding task at the same time.
+
+Both programmers work on one computer (although they can work remotely), with one acting as *the driver*, controlling the keyboard and mouse, and the other one acting as *the navigator*, reviewing the code as it's written and offering suggestions.
+
+Pair programmers often find this technique allows them to be more productive and write higher-quality code because they are discussing, reviewing, and testing the code as it gets written.
+
+The roles must be swapped regularly.
+
+## **Pair Programming Demo: Average Weight of Women**
+
+**Step 1:** Decide who will be the driver and who will be the navigator.
+
+**Step 2**: Start the task :)
+
+**Task**: Calculate average weight, plot distribution, and mark the mean.
+
+**Dataset:** `women` (built-in in R)
+
+1.  Let's start by checking the dataset.
+
+```{r}
+
+```
+
+2.  Calculate the average weight
+
+```{r}
+
+```
+
+3.  Make a histogram to see the distribution of weights.
+
+```{r}
+
+```
+
+4.  Make it prettier.
+
+```{r}
+
+```
+
+5.  Add a vertical line showing the average weight.
+
+```{r}
+
+```
+
+6.  Calculate median weight and compare to the mean
+
+```{r}
+
+```
+
+7.  Make a boxplot to visualise the distribution
+
+```{r}
+
+```
