@@ -17,7 +17,7 @@ Both programmers work on one computer (although they can work remotely), with on
 
 Pair programmers often find this technique allows them to be more productive and write higher-quality code because they are discussing, reviewing, and testing the code as it gets written.
 
-The roles must be swapped regularly.
+The roles should be swapped regularly.
 
 ## **Pair Programming Demo: Average Weight of Women**
 
