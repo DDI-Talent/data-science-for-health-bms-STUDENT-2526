@@ -1,0 +1,63 @@
+---
+title: "Week 1 exercise set 2"
+author: "Data Science Course Team"
+date: "2025-09-19"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+Please complete the exercises below in your pair. Remember to switch who is 
+driving after each task.
+
+# Exercise 1
+
+Assume the following definitions for a survey:
+
+-   A person with an age from 1 to 17 years is classified as a minor;
+
+-   a person with an age from 18 to 64 years is classified as an adult;
+
+-   a person with an age from 65 to 99 years is classified as a senior.
+
+Generate a vector with 100 random samples that specifies the age of 100 people (in years), but contains exactly 20 minors, 50 adults, and 30 seniors.
+
+```{r}
+
+```
+
+# Exercise 2
+
+What is the average (mean), minimum, and maximum age in this sample?
+
+```{r}
+
+```
+
+# Exercise 3
+
+How many people are younger than 25 years?
+
+```{r}
+
+```
+
+# Exercise 4
+
+What is the average (mean) age of people older than 50 years?
+
+```{r}
+
+```
+
+# Exercise 5
+
+How many people have a round age (i.e., an age that is divisible by 10)? What is their mean age?
+
+HINT: For this task, you'll need to use the modulo operator, which gives you the remainder of integer division. Look it up if you're not familiar with it.
+
+```{r}
+
+```
