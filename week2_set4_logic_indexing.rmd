@@ -1,0 +1,140 @@
+---
+title: "Week 02 - conditions and logical indexing"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Exercise 01: conditions 1
+
+Examine the code and decide on whether a condition will be `TRUE` or `FALSE`. Write down the answer and then run the chunk to check the answer.
+
+**Answer 1:**
+
+```{r exercise 01-1}
+x <- 4
+(x > 3)
+```
+
+**Answer 2:**
+
+```{r exercise 01-2}
+x <- 4
+y <- 5
+(x != y)
+```
+
+## Exercise 02: conditions 2
+
+Examine the code and decide on whether a condition will be `TRUE` or `FALSE`. Write down the answer and then run the chunk to check the answer.
+
+**Answer 1:**
+
+```{r exercise 02-1}
+x <- 4
+!(x < 3)
+```
+
+**Answer 2:**
+
+```{r exercise 02-2}
+x <- 4
+y <- 5
+!(x != y)
+```
+
+## Exercise 03: conditions 3
+
+Examine the code and decide on whether a condition will be `TRUE` or `FALSE`. Write down the answer and then run the chunk to check the answer.
+
+**Answer 1:**
+
+```{r exercise 03-1}
+x <- 4
+(x < 3) | (x >=4)
+```
+
+**Answer 2:**
+
+```{r exercise 03-2}
+x <- 4
+y <- 6
+(x == y) | ((x < 5) & (y > 5))
+```
+
+**Answer 3:**
+
+```{r exercise 03-3}
+x <- 3
+y <- 3
+(x != y) & ((x <= 3) & (y >= 3))
+```
+
+**Answer 4:**
+
+```{r exercise 03-4}
+x <- 3
+y <- 3
+(x != y) | ((x <= 3) & (y >= 3))
+```
+
+## Exercise 04: conditions
+
+Examine the code and decide on whether a condition will be `TRUE` or `FALSE`. Write down the answer and run the chunk to check the answer.
+
+**Answer 1:**
+
+```{r exercise 04-1}
+x <- seq(-4, 4, 2)
+(x == 0)
+```
+
+**Answer 2:**
+
+```{r exercise 04-2}
+x <- seq(-4, 4, 2)
+y <- 1:5
+(x + y <= 0)
+```
+
+**Answer 3:**
+
+```{r exercise 04-3}
+x <- seq(-4, 12, 4)
+y <- 1:5
+(x > y)
+```
+
+**Answer 4:**
+
+```{r exercise 04-4}
+x <- seq(-4, 12, 4)
+y <- 1:5
+(x > y) & ((x < 10) | (y < 3))
+```
+
+## Exercise 05: logical indexing
+
+Use logical indexing to values of `x` that are above 3.
+
+```{r exercise 05-1}
+x <- -3:7
+# Your code goes here
+```
+
+Use logical indexing to extract values of `x` when it is higher than value in `y`
+
+```{r exercise 05-2}
+x <- -3:7
+y <- seq(5, -2, length.out = 11)
+# Your code goes here
+```
+
+Use logical indexing to extract values of `x` that are greater than the mean value of x (avoid using intermediate variables).
+
+```{r exercise 05-3}
+x <- -3:7
+# Your code goes here
+```

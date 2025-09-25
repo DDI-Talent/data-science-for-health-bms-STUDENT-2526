@@ -1,5 +1,5 @@
 ---
-title: "Week01 TBI"
+title: "Week02 TBI"
 author: "Data Science Course Team"
 date: "`r Sys.Date()`"
 output: html_document
@@ -13,11 +13,15 @@ You will need to load the required libraries first: `tidyverse` and `here`. Inst
 
 Note: The `here()` function only works if you are working inside an R Project. An R Project tells R where your “home” folder is, so `here()` can find files without you having to write long, messy paths.
 
+In this set of exercises, you'll practice setting up subfolders and moving between them using the `here()` function.
+
+We will assume that you have set up a `Week02` folder, and set up an R project associated with that folder. This file (the set of exercises) should also be saved in the `Week02` folder.
 
 ```{r libraries}
-# install.packages("here") # Remove the hashtag and run just once. Once installed in your laptop, you won't need to install it ever again.
+# install.packages("here") # Remove the hashtag and run just once. Once installed on your laptop, you won't need to install it ever again.
 library(tidyverse)
 library(here)
+# Note the output in the R console when you load the library `here` - R will show you the path to your working directory, so you know where you are working. The path should lead to your `Week02` folder.
 ```
 
 We will be using traumatic brain injury data from a Tidy Tuesday challenge. Learn more about the challenge and the data here (spend max 3 minutes looking at the linked page): <https://github.com/rfordatascience/tidytuesday/blob/master/data/2020/2020-03-24/readme.md>
@@ -29,11 +33,11 @@ tbi_age <- read_csv('https://raw.githubusercontent.com/rfordatascience/tidytuesd
 tbi_year <- read_csv('https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2020/2020-03-24/tbi_year.csv')
 ```
 
-Now, set up folders in your working directory: raw_data, scripts, plots and tables. Put this RMarkdown document in your scripts folder.
+Now, set up subfolders in your working directory (`Week02` folder): raw_data, scripts, plots and tables. Put this RMarkdown document in your `scripts` subfolder (you can do this using your file manager, or using the RStudio Files interface).
 
 ### Task 1
 
-Save both datasets in the raw_data folder (use the 'here' library)
+Save both datasets in the raw_data folder (use functions `here` and `write_csv`).
 
 ```{r saving-data-locally}
 
@@ -41,7 +45,7 @@ Save both datasets in the raw_data folder (use the 'here' library)
 
 ### Task 2
 
-Use your favourite functions for eyeballing data and write a couple of sentences about each dataset (its dimensions, the variables inside, types of data, etc.)
+Use your favourite functions for eyeballing data (bonus if you use the `tidyverse` for this) and write a couple of sentences about each dataset (its dimensions, the variables inside, types of data, etc.)
 
 ### Task 3
 
