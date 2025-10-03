@@ -1,0 +1,18 @@
+---
+title: "week3_set2_accidents"
+author: "Karim Rivera-Lares"
+date: "2025-08-14"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+Data vis challenge! Your task is to recreate the graph below.
+
+The data can be found in the data directory, and it’s called `accidents` It covers all recorded accidents in Edinburgh in 2018 and some of the variables were modified for the purposes of this assignment.
+
+![](edi-accidents.png)
+
+*This exercise has been adapted from Mine Çetinkaya-Rundel, CC-BY-NC.*
