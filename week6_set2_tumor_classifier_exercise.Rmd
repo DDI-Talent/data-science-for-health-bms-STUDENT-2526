@@ -1,0 +1,139 @@
+---
+title: "Tumour Classifier - K-Nearest Neighbours"
+author: "Your name"
+date: "`r Sys.Date()`"
+output: 
+  html_document:
+    toc: true
+    number_sections: true
+---
+
+# Tumour Classifier with K-Nearest Neighbours (KNN)
+
+In this exercise, you'll build a KNN classifier to distinguish between tumor classes based on a subset of features. Complete the steps by filling in the missing code and answering questions.
+
+You will use the `caret` package for this exercise. Use the 'help' in RStudio to discover how they work. The key functions that you will use are:
+
+-   createDataPartition
+-   trainControl
+-   train
+-   predict
+-   confusionMatrix
+
+## Instructions
+
+### Step 1: Install and load necessary libraries
+
+Fill in the missing code to install and load the following libraries: tidyverse, here, and caret.
+
+```{r }
+# Install packages if you haven't already
+# install.packages("caret")
+
+library(tidyverse) 
+library(here)
+library(caret)
+```
+
+### Step 2: Load the dataset
+
+```{r load-data}
+cancer_data <- read_csv(here("data", "synthetic_cancer_data.csv"))
+
+cancer_data
+```
+
+### Step 3: Prepare the data
+
+-   Create a new dataset that is a subset of the cancer_data, called data_subset, and from it, select the three relevant variables: Perimeter, Concavity, Class
+-   Convert the target variable to a factor
+-   Split the data into 80% training and 20% testing sets
+
+```{r}
+
+# Keep only the three relevant columns
+# Your code here
+
+# Encode the target variable as a factor
+# Your code here
+
+# Set a seed for reproducibility
+set.seed(42)
+
+# Split the data into training (80%) and testing (20%) sets. Set list to FALSE.
+train_index <- # Your code here
+
+training_dataset <- data_subset %>% 
+  slice(train_index)
+
+testing_dataset <- data_subset %>% 
+  slice(-train_index)
+
+```
+
+*Question*: Why is it important to set a seed before splitting the data?
+
+*Answer*: ....
+
+### Step 4: Train the KNN model
+
+-   Define a cross-validation control.
+-   Train the KNN model, tuning the number of neighbours 'k' using tuneLength = 10.
+
+```{r}
+# Define training control (using 10-fold cross-validation)
+trainControl <- trainControl(method = "cv", number = 10)
+
+# Train the KNN model 
+knn_model <- train(Class ~ ., 
+                 data = training_dataset, 
+                 preProcess = c("scale", "center"),
+                 method = "knn",
+                 trControl = trainControl,
+                 tuneLength = 10)
+
+# View the results
+knn_model
+
+```
+
+*Question*: What is the purpose of using cross-validation when training the model?
+
+*Answer*: ...
+
+### Step 5: Make predictions
+
+-   Use the trained model to predict on the test data.
+-   Assess the performance using a confusion matrix.
+
+```{r}
+# Make predictions on the test set
+predictions <- predict(knn_model, newdata = testing_dataset)
+
+predictions
+
+# Confusion matrix  
+confusionMatrix(predictions, testing_dataset$Class)
+
+```
+
+*Question*: What insights can you gather from the confusion matrix? Is the model performing well?
+
+*Answer*: ...
+
+### Step 6: Tune the model (optional)
+
+-   Explore the best value of 'k' from the trained model.
+-   Discuss how the number of neighbors (k) impacts model performance.
+
+```{r}
+# Check the best value of 'k'
+best_k <- knn_model$bestTune
+best_k
+
+plot(knn_model, main = "KNN: Accuracy for different k values")
+```
+
+*Question*: What is the optimal value of 'k'? How would you explain its significance?
+
+*Answer*: ...
